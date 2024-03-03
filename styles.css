@@ -7,8 +7,24 @@ body, html {
     padding: 0;
 }
 
-h1 {
+body {
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.top-section h1 {
+    font-weight: 76.25rem;
+    font-size: 100px;
+    line-height: 97.3%;
     margin: 0;
+    max-width: 525px;
+}
+
+.intro-text
+ {
+    font-size: 1.25rem;
+    line-height: 169.3%;
+    margin: 1rem 0;
+    max-width: 435px;
 }
 
 .top-section-wrapper {
@@ -25,11 +41,18 @@ h1 {
     margin: 0 auto;
 }
 
+.intro-buttons {
+    margin-bottom: 129px;
+}
+
 .btn {
     color: white;
     text-decoration: none;
     padding: 14px 40px;
     border-radius: 71px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    display: inline-block;
 }
 
 .btn--primary {
@@ -44,4 +67,36 @@ h1 {
 
 .utility-mr {
     margin-right: 10px;
+}
+
+.intro-call-out-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.intro-call-out-box {
+    border: 1px rgba(255, 255, 255, 0.24) solid;
+    padding: 33px 25px;
+}
+
+.intro-call-out-box h2 {
+    margin: 44px 0 0 0;
+}
+
+.intro-call-out-box p {
+        margin: 0;
+}
+
+@media only screen and (min-width: 500px) {
+    .intro-call-out-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .intro-call-out-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 0;
+    }
 }
