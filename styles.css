@@ -69,11 +69,23 @@ body {
 .btn--primary {
   background-color: #475aff;
   border: 2px solid #475aff;
+  transition: background-color .3s ease-out, border .3s ease-out;
+}
+
+.btn--primary:hover {
+  background-color: #2E04E2;
+  border: 2px solid #2E04E2;
 }
 
 .btn--outline {
   background: transparent;
   border: 2px solid white;
+}
+
+.btn--outline:hover {
+  background: white;
+  color: #475aff;
+  transition: background-color .3s ease-out, color .3s ease-out;
 }
 
 .utility-mr {
@@ -104,7 +116,7 @@ body {
 
 .page-section {
   background-color: #fff;
-  padding: 130px 16px;
+  padding: 70px 16px;
 }
 
 .page-section-inner {
@@ -113,7 +125,7 @@ body {
 }
 
 .page-section-title {
-  font-size: 5.31rem;
+  font-size: 4rem;
   margin: 0;
   line-height: 1;
 }
@@ -121,7 +133,7 @@ body {
 .pet-filter p,
 .pet-filter button {
   color: #9f9f9f;
-  font-size: 1.375rem;
+  font-size: 1.15rem;
   font-family: "Source Sans 3", sans-serif;
 }
 
@@ -213,11 +225,26 @@ body {
   .intro-buttons {
     margin-bottom: 129px;
   }
+
+  .page-section-title {
+    font-size: 5.31rem;
+  }
+
+  .pet-filter p,
+  .pet-filter button {
+    color: #9f9f9f;
+    font-size: 1.375rem;
+    font-family: "Source Sans 3", sans-serif;
+}
 }
 
 @media only screen and (min-width: 768px) {
   .pet-card {
     grid-template-columns: 165px 1fr;
+  }
+
+  .page-section {
+    padding: 130px 16px;
   }
 }
 
