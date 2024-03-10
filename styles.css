@@ -14,10 +14,10 @@ body {
 
 .top-section h1 {
   font-weight: 76.25rem;
-  font-size: 100px;
+  font-size: 4rem;
   line-height: 97.3%;
   margin: 0;
-  max-width: 525px;
+  max-width: 305px;
 }
 
 .intro-text {
@@ -37,19 +37,23 @@ body {
 
 .top-section {
   color: white;
-  padding-top: 139px;
+  padding-top: 100px;
   padding-bottom: 139px;
   max-width: 1066px;
   margin: 0 auto;
 }
 
 .actual-top-content {
-    z-index: 2;
-    position: relative;
+  z-index: 2;
+  position: relative;
 }
 
 .intro-buttons {
-  margin-bottom: 129px;
+  margin-bottom: 70px;
+}
+
+.intro-buttons .btn--primary {
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -99,63 +103,88 @@ body {
 }
 
 .page-section {
-    background-color: #fff;
-    padding: 130px 16px;
+  background-color: #fff;
+  padding: 130px 16px;
 }
 
 .page-section-inner {
-    margin: 0 auto;
-    max-width: 1066px;
+  margin: 0 auto;
+  max-width: 1066px;
 }
 
 .page-section-title {
-    font-size: 5.31rem;
-    margin: 0;
-    line-height: 1;
+  font-size: 5.31rem;
+  margin: 0;
+  line-height: 1;
 }
 
-.pet-filter p, .pet-filter button {
-    color: #9F9F9F;
-    font-size: 1.375rem;
-    font-family: "Source Sans 3", sans-serif;
+.pet-filter p,
+.pet-filter button {
+  color: #9f9f9f;
+  font-size: 1.375rem;
+  font-family: "Source Sans 3", sans-serif;
 }
 
-.pet-filter button{
-    border: none;
-    background: none;
+.pet-filter button {
+  border: none;
+  background: none;
 }
 
 .list-of-pets {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 34px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 28px;
 }
 
 .pet-card {
-    display: grid;
-    grid-template-columns: 1fr;
-    border-radius: 20px;
-    border: 1px solid #F3F3F3;
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 20px;
+  border: 1px solid #f3f3f3;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
 .pet-card-photo {
-    order: 1;
-    grid-row: 1;
+  order: 1;
+  grid-row: 1;
 }
 
 .pet-card-photo img {
-    width: 100%;
-    display: block;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.pet-card-text {
+  padding: 29px 21px;
+}
+
+.pet-card-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+.pet-description {
+  margin: 0 0 1rem 0;
+  color: #626262;
+  line-height: 150%;
+}
+
+.pet-age {
+  color: #a2a2a2;
+  font-size: 0.85rem;
+  margin: 0;
 }
 
 .site-footer p {
-    text-align: center;
-    color: #A6A7A6;
-    font-size: 0.875rem;
-    margin: 0;
-    padding: 0 0 65px 0;
+  text-align: center;
+  color: #a6a7a6;
+  font-size: 0.875rem;
+  margin: 0;
+  padding: 0 0 65px 0;
 }
 
 @media only screen and (min-width: 500px) {
@@ -163,17 +192,33 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
+  .intro-buttons .btn--primary {
+    margin-bottom: 1rem;
+  }
+
   .list-of-pets {
     grid-template-columns: 1fr 1fr;
     column-gap: 34px;
-}
+  }
 
+  .top-section {
+    padding-top: 139px;
+  }
+
+  .top-section h1 {
+    font-size: 6.25rem;
+    max-width: 525px;
+  }
+
+  .intro-buttons {
+    margin-bottom: 129px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .pet-card {
-        grid-template-columns: 165px 1fr;
-    }
+  .pet-card {
+    grid-template-columns: 165px 1fr;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -183,24 +228,26 @@ body {
   }
 }
 
+/* background circles */
+
 .circle {
-    width: 617px;
-    height: 617px;
-    background: #d660ff;
-    opacity: .85;
-    border-radius: 50%;
-    filter: blur(150px);
-    position: absolute;
-    right: -200px;
-    top: 62px;
+  width: 617px;
+  height: 617px;
+  background: #d660ff;
+  opacity: 0.85;
+  border-radius: 50%;
+  filter: blur(150px);
+  position: absolute;
+  right: -200px;
+  top: 62px;
 }
 
 .circle-2 {
-    position: absolute;
-    width: 617px;
-    height: 617px;
-    left: 67px;
-    top: -450px;
-    background: #6079FF;
-    filter: blur(150px);
+  position: absolute;
+  width: 617px;
+  height: 617px;
+  left: 67px;
+  top: -450px;
+  background: #6079ff;
+  filter: blur(150px);
 }
