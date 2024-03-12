@@ -47,7 +47,6 @@ getWeatherData()
   const template = document.getElementById("pet-card-template");
   const wrapper = document.createDocumentFragment();
   const listDiv = document.querySelector(".list-of-pets");
-  const thisYear = new Date().getFullYear();
 
   async function petsArea() {
     const petsPromise = await fetch('https://learnwebcode.github.io/bootcamp-pet-data/pets.json')
@@ -56,14 +55,19 @@ getWeatherData()
       const clone = template.content.cloneNode(true);
       clone.querySelector("h3").textContent = pet.name;
       clone.querySelector(".pet-description").textContent = pet.description;
-      clone.querySelector(".pet-age").textContent = `${thisYear - pet.birthYear} years old`;
-      clone.querySelector("img").setAttribute("src", `${pet.photo}`);
-      clone.querySelector("img").setAttribute("alt", `A ${pet.species} named ${pet.name}`);
+      clone.querySelector(".pet-age").textContent = createAgeText(pet.birthYear)
+      clone.querySelector(".pet-card-photo img").src = pet.photo;
+      clone.querySelector(".pet-card-photo img").alt = `A ${pet.species} named ${pet.name}`;
       wrapper.appendChild(clone);
     })
     listDiv.appendChild(wrapper)
   }
-
-
-
   petsArea();
+
+  function createAgeText(birthYear){
+    const thisYear = new Date().getFullYear();
+    const yearsOld = thisYear - birthYear
+    if (yearsOld < 1) return `Less than a year old`;
+    else if (yearsOld === 1) return `${yearsOld} year old`;
+    else return `${yearsOld} years old`;
+  }
