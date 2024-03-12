@@ -1,25 +1,24 @@
-document.getElementById('copyrightYear').innerText = new Date().getFullYear();
+// API variable
 const API_KEY = config.MY_KEY
 
+// Set copyright in footer
+document.getElementById('copyrightYear').innerText = new Date().getFullYear();
+
+// Temperature Feature with comments from chatGPT
 const temperature = document.getElementById('miami-temp');
 let currentTemp
-
 async function getWeatherData() {
   try {
     const weatherPromise = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=25.76&lon=-80.19&appid=${API_KEY}`);
-
     if (!weatherPromise.ok) {
       // Throw an error if the HTTP response is not okay
       throw new Error(`Failed to fetch weather data. Status: ${weatherPromise.status}`);
     }
-
     const weatherData = await weatherPromise.json();
-
     if (!weatherData.main || !weatherData.main.temp) {
       // Throw an error if the expected data is not present
       throw new Error('Unexpected format of weather data.');
     }
-
     // Return the weather data if everything is successful
     return weatherData;
   } catch (error) {
@@ -28,14 +27,11 @@ async function getWeatherData() {
     throw error;
   }
 }
-
 // Example of using the function with error handling
 getWeatherData()
   .then((weatherData) => {
     // Handle the weather data if the promise is resolved
-
     currentTemp = Math.round((weatherData.main.temp - 273.15) * (9/5) + 32);
-
     // Assuming 'temperature' is a DOM element
     temperature.textContent = `${currentTemp}`;
   })
@@ -44,6 +40,7 @@ getWeatherData()
     console.error('Error:', error);
   });
 
+  // Pet Area display
   const template = document.getElementById("pet-card-template");
   const wrapper = document.createDocumentFragment();
   const listDiv = document.querySelector(".list-of-pets");
@@ -71,3 +68,5 @@ getWeatherData()
     else if (yearsOld === 1) return `${yearsOld} year old`;
     else return `${yearsOld} years old`;
   }
+
+  //Pet filter button
