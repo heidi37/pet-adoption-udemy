@@ -50,6 +50,7 @@ getWeatherData()
     const petsData = await petsPromise.json();
     petsData.forEach(pet => {
       const clone = template.content.cloneNode(true);
+      clone.querySelector(".pet-card").dataset.species = pet.species
       clone.querySelector("h3").textContent = pet.name;
       clone.querySelector(".pet-description").textContent = pet.description;
       clone.querySelector(".pet-age").textContent = createAgeText(pet.birthYear)
@@ -81,4 +82,13 @@ getWeatherData()
       button.classList.remove("active")
     }
     e.target.classList.add("active");
+
+    const currentFilter = e.target.dataset.filter
+    document.querySelectorAll(".pet-card").forEach(card => {
+      if (currentFilter == card.dataset.species || currentFilter === "all"){
+        card.style.display = "grid";
+      } else {
+        card.style.display = "none";
+      }
+    })
   }
