@@ -1,5 +1,4 @@
 document.getElementById('copyrightYear').innerText = new Date().getFullYear();
-
 const API_KEY = config.MY_KEY
 
 const temperature = document.getElementById('miami-temp');
@@ -44,3 +43,27 @@ getWeatherData()
     // Handle errors if the promise is rejected
     console.error('Error:', error);
   });
+
+  const template = document.getElementById("pet-card-template");
+  const wrapper = document.createDocumentFragment();
+  const listDiv = document.querySelector(".list-of-pets");
+  const thisYear = new Date().getFullYear();
+
+  async function petsArea() {
+    const petsPromise = await fetch('https://learnwebcode.github.io/bootcamp-pet-data/pets.json')
+    const petsData = await petsPromise.json();
+    petsData.forEach(pet => {
+      const clone = template.content.cloneNode(true);
+      clone.querySelector("h3").textContent = pet.name;
+      clone.querySelector(".pet-description").textContent = pet.description;
+      clone.querySelector(".pet-age").textContent = `${thisYear - pet.birthYear} years old`;
+      clone.querySelector("img").setAttribute("src", `${pet.photo}`);
+      clone.querySelector("img").setAttribute("alt", `A ${pet.species} named ${pet.name}`);
+      wrapper.appendChild(clone);
+    })
+    listDiv.appendChild(wrapper)
+  }
+
+
+
+  petsArea();
