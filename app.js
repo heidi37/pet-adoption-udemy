@@ -1,6 +1,3 @@
-// API variable
-const API_KEY = config.MY_KEY
-
 // Set copyright in footer
 document.getElementById('copyrightYear').innerText = new Date().getFullYear();
 
