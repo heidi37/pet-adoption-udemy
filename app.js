@@ -70,3 +70,15 @@ getWeatherData()
   }
 
   //Pet filter button
+  const buttons = document.querySelectorAll(".pet-filter button")
+  buttons.forEach((button) => {
+    button.addEventListener("click", handleButtonClick);
+  })
+
+
+  function handleButtonClick(e){
+    for (let button of buttons){
+      button.classList.remove("active")
+    }
+    e.target.classList.add("active");
+  }
