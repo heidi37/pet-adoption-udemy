@@ -73,12 +73,12 @@ body {
 .btn--primary {
   background-color: #475aff;
   border: 2px solid #475aff;
-  transition: background-color .3s ease-out, border .3s ease-out;
+  transition: background-color 0.3s ease-out, border 0.3s ease-out;
 }
 
 .btn--primary:hover {
-  background-color: #2E04E2;
-  border: 2px solid #2E04E2;
+  background-color: #2e04e2;
+  border: 2px solid #2e04e2;
 }
 
 .btn--outline {
@@ -89,7 +89,7 @@ body {
 .btn--outline:hover {
   background: white;
   color: #475aff;
-  transition: background-color .3s ease-out, color .3s ease-out;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
 
 .utility-mr {
@@ -139,11 +139,22 @@ body {
   color: #9f9f9f;
   font-size: 1.15rem;
   font-family: "Source Sans 3", sans-serif;
+  cursor: pointer;
 }
 
 .pet-filter button {
   border: none;
   background: none;
+}
+
+.pet-filter button:hover {
+  color: #7d7d7d;
+}
+
+.pet-filter .active,
+.pet-filter .active:hover {
+  color: #475aff;
+  text-decoration: underline;
 }
 
 .list-of-pets {
@@ -239,7 +250,7 @@ body {
     color: #9f9f9f;
     font-size: 1.375rem;
     font-family: "Source Sans 3", sans-serif;
-}
+  }
 }
 
 @media only screen and (min-width: 768px) {
