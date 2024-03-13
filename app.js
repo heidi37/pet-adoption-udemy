@@ -18,7 +18,7 @@ getWeatherData()
   const listDiv = document.querySelector(".list-of-pets");
 
   async function petsArea() {
-    const petsPromise = await fetch('https://pet-adoption-udemy.netlify.app/.netlify/functions/pets')
+    const petsPromise = await fetch('https://netlify-pets-udemy.netlify.app/.netlify/functions/pets')
     const petsData = await petsPromise.json();
     petsData.forEach(pet => {
       const clone = template.content.cloneNode(true);
